@@ -1,0 +1,9 @@
+import React from 'react';
+import { Image } from 'react-native';
+import styles from '../styles/stylesPerfil.js';
+
+const FotoPerfil = ({ imagem }) => (
+  <Image style={styles.fotoPerfil} source={imagem} />
+);
+
+export default FotoPerfil;

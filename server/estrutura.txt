@@ -1,0 +1,31 @@
+backend/
+├── controllers/             ← lógica de cada rota
+│   ├── authController.js
+│   ├── usuarioController.js
+│   └── reportController.js
+│
+├── services/                ← regras de negócio e integração externa
+│   ├── authService.js
+│   ├── usuarioService.js
+│
+├── routes/                  ← define e agrupa as rotas
+│   ├── index.js             ← entrada geral
+│   ├── authRoutes.js
+│   ├── usuarioRoutes.js
+│   └── reportRoutes.js
+│
+├── middleware/              ← autenticação, validação etc.
+│   ├── authMiddleware.js
+│   └── errorHandler.js
+│
+├── models/                  ← modelos de banco de dados (opcional)
+│   └── Usuario.js
+│
+├── utils/                   ← funções auxiliares (ex: formatação)
+│   └── tokenUtils.js
+│
+├── config/
+│   └── db.js                ← conexão com banco (Sequelize/Mongo/etc.)
+│
+├── app.js                   ← setup do express
+└── server.js                ← ponto de entrada da aplicação
