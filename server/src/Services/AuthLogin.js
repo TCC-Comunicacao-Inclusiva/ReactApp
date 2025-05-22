@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import User from '../models/Users.js';
+import User from '../Models/Users.js';
 import UserToken from '../models/UserToken.js';
 
 class AuthLogin {
@@ -10,7 +10,7 @@ class AuthLogin {
       throw new Error('Usuário não encontrado');
     }
 
-    const tokenData = UserToken.getByUserId(user.email);
+    const tokenData = UserToken.getByUserId(user.id);
     if (!tokenData) {
       throw new Error('Token de senha não encontrado');
     }

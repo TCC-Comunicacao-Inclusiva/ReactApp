@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, Image, TouchableOpacity } from 'react-native';
 import styles from '../styles/stylesTelaAudio.js';
 
-const CardAprendizado = ({ conteudo }) => (
-  <View style={styles.card}>
-    <Text style={styles.titulo}>{conteudo.titulo}</Text>
-    <Text style={styles.descricao}>{conteudo.getResumo()}</Text>
-  </View>
+const CardAprendizado = ({ conteudo, onPress }) => (
+  <TouchableOpacity style={styles.button} onPress={onPress}>
+    {conteudo.getImagem() && (
+      <Image source={conteudo.getImagem()} style={styles.buttonImage} />
+    )}
+    <Text style={styles.buttonText}>{conteudo.getTitulo()}</Text>
+  </TouchableOpacity>
 );
 
 export default CardAprendizado;

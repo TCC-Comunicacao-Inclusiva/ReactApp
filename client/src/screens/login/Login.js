@@ -9,19 +9,33 @@ export default function LoginScreen({ navigation }) {
   const [senha, setSenha] = useState('');
   const { login } = useContext(AuthContext);
 
-  const handleLogin = () => {
-    try {
-      const autenticado = autenticarUsuario(email, senha);
-      if (autenticado) {
-        login({ email }); // Atualiza o contexto global
-        navigation.navigate('Inicio');
-      } else {
-        Alert.alert('Erro', 'Credenciais inválidas');
-      }
-    } catch (error) {
-      Alert.alert('Erro', error.message);
+const handleLogin = async () => {
+  try {
+    const response = await fetch('http://192.168.15.114:5000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password: senha })  // o nome da chave deve bater com o backend
+    });
+
+    if (!response.ok) {
+      throw new Error('Erro ao fazer login');
     }
-  };
+
+    const data = await response.json();
+
+    if (data && data.token) {
+      login({ email, token: data.token }); // Atualiza o contexto global com token se quiser
+      navigation.navigate('Inicio');
+    } else {
+      Alert.alert('Erro', 'Credenciais inválidas');
+    }
+  } catch (error) {
+    Alert.alert('Erro', error.message);
+  }
+};
+
 
   return (
     <View style={styles.container}>

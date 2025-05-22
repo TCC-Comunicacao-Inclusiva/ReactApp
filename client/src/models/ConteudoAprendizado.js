@@ -1,12 +1,20 @@
 export default class ConteudoAprendizado {
-  constructor(titulo, descricao) {
+  constructor(titulo, resumo, imagem = null) {
     this.titulo = titulo;
-    this.descricao = descricao;
+    this.resumo = resumo;
+    this.imagem = imagem;
   }
 
   getResumo() {
-    return this.descricao.length > 100
-      ? this.descricao.slice(0, 100) + '...'
-      : this.descricao;
+    return this.resumo;
+  }
+
+  getTitulo() {
+    return this.titulo;
+  }
+
+  getImagem() {
+    return this.imagem;
   }
 }
+

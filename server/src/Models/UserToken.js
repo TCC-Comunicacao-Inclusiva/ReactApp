@@ -1,6 +1,9 @@
 class UserToken {
   constructor() {
-    this.tokens = [];
+    this.tokens = [{
+      userId : 1,
+      token : 'aabbcc'
+    }];
   }
 
   save(userId, token) {

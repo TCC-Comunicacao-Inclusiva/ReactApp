@@ -1,5 +1,5 @@
 import AuthRegister from "../Services/AuthRegister.js";
-import AuthLogin from "../Services/AuthLogin";
+import AuthLogin from "../Services/AuthLogin.js";
 
 class AuthController {
   async register(req, res) {

@@ -5,8 +5,8 @@ class User {
     this.users = [
       {
         id: 1,
-        email: 'teste@email.com',
-        passwordHash: bcrypt.hashSync('123456', 8)
+        email: 'Admin',
+        passwordHash: bcrypt.hashSync('123456aabbcc', 8)
       }
     ];
   }

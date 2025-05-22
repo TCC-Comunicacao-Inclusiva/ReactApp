@@ -5,10 +5,13 @@ const router = express.Router();
 
 //Validar Login
 router
-.route('Rota')
+.route('/login')
 .post((req,res)=>AuthController.login(req,res));
 
 //Cadastro
 router
-.route('Rota')
+.route('/register')
 .post((req,res)=>AuthController.register(req,res));
+
+
+export default router;
