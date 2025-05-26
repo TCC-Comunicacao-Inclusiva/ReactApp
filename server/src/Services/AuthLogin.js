@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../Models/Users.js';
-import UserToken from '../models/UserToken.js';
+import UserToken from '../Models/UserToken.js';
 
 class AuthLogin {
   async login(email, password) {
@@ -23,8 +23,8 @@ class AuthLogin {
 
     const token = jwt.sign(
       { id: user.id, email: user.email },
-      'seu_segredo_secreto',
-      { expiresIn: '1h' }
+      'xH92!fJw@8d3R*eGvMzY#LqP!z5W$s^VpKwBnXtCePzUv7rN9kL2QjDmT8yHsAfEq',
+      { expiresIn: '5h' }
     );
 
     return { token };

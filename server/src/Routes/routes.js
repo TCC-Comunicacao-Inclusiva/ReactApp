@@ -1,5 +1,6 @@
 import express from 'express';
 import AuthController from '../Controllers/AuthController.js';
+import autenticarToken from '../Middleware/Authtoken.js';
 
 const router = express.Router();
 
@@ -12,6 +13,11 @@ router
 router
 .route('/register')
 .post((req,res)=>AuthController.register(req,res));
+
+//Perfil
+router
+.route('/perfil')
+.get(autenticarToken,(req,res)=>AuthController.getPerfil(req,res));
 
 
 export default router;

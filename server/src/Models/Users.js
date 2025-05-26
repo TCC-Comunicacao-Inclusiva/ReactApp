@@ -6,7 +6,10 @@ class User {
       {
         id: 1,
         email: 'Admin',
-        passwordHash: bcrypt.hashSync('123456aabbcc', 8)
+        passwordHash: bcrypt.hashSync('123456aabbcc', 8),
+        name : 'Kauai Staingel',
+        age : 24,
+        interests: 'Rainbow Six e São Paulo Futebol Clube'
       }
     ];
   }

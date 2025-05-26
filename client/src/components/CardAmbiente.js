@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
-import styles from '../styles/stylesAmbiente.js';
+import { Text, Image, TouchableOpacity } from 'react-native';
+import styles from '../styles/stylesTelaAudio.js';
 
-const CardAmbiente = ({ ambiente }) => (
-  <View style={styles.container}>
-    <Text style={styles.titulo}>{ambiente.getNomeFormatado()}</Text>
-    <Image style={styles.imagem} source={ambiente.getIcone()} />
-  </View>
+const CardAmbiente = ({ conteudo, onPress }) => (
+  <TouchableOpacity style={styles.button} onPress={onPress}>
+    {conteudo.getImagem() && (
+      <Image source={conteudo.getImagem()} style={styles.buttonImage} />
+    )}
+    <Text style={styles.buttonText}>{conteudo.getTitulo()}</Text>
+  </TouchableOpacity>
 );
 
 export default CardAmbiente;
