@@ -1,5 +1,6 @@
 import AuthRegister from "../Services/AuthRegister.js";
 import AuthLogin from "../Services/AuthLogin.js";
+import Ambiente from "../Models/Ambiente.js";
 import User from "../Models/Users.js";
 
 class AuthController {
@@ -30,7 +31,6 @@ class AuthController {
       const result = await AuthLogin.login(email, password);
       res.json(result);
     } catch (err) {
-      console.log(1)
       res.status(401).json({ message: err.message });
     }
   }
@@ -53,6 +53,25 @@ class AuthController {
       res.status(500).json({ message: 'Erro ao buscar perfil' });
     }
   }
+
+  async getAllAmbientes(req, res) {
+  try {
+    const usuario = req.usuario;
+
+    if (!usuario) {
+      return res.status(400).json({ message: 'Usuário não encontrado no token' });
+    }
+
+    const ambientes = Ambiente.getAll();
+
+
+    res.json({ ambientes });
+    
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Erro ao buscar ambientes' });
+  }
+}
 }
 
 

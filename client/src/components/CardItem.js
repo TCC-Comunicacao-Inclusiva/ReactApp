@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Image, TouchableOpacity } from 'react-native';
 import styles from '../styles/stylesTelaAudio.js';
 
-const CardAmbiente = ({ conteudo, onPress }) => (
+const CardItem = ({ conteudo, onPress }) => (
   <TouchableOpacity style={styles.button} onPress={onPress}>
     {conteudo.getImagem() && (
       <Image source={conteudo.getImagem()} style={styles.buttonImage} />
@@ -11,4 +11,4 @@ const CardAmbiente = ({ conteudo, onPress }) => (
   </TouchableOpacity>
 );
 
-export default CardAmbiente;
+export default CardItem;

@@ -19,5 +19,10 @@ router
 .route('/perfil')
 .get(autenticarToken,(req,res)=>AuthController.getPerfil(req,res));
 
+//AllAmbientes
+router
+.route('/allambientes')
+.get(autenticarToken,(req,res)=>AuthController.getAllAmbientes(req,res));
+
 
 export default router;
