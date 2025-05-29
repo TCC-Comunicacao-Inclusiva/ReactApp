@@ -1,5 +1,7 @@
+import Constants from 'expo-constants';
 import React, { createContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export const AuthContext = createContext();
 
@@ -27,7 +29,8 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const resposta = await fetch('http://172.20.10.5:5000/login', {
+      const HOST = Constants.expoConfig.extra.apiurl;
+      const resposta = await fetch(`http://${HOST}:5000/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

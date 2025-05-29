@@ -11,7 +11,7 @@ export default function LoginScreen({ navigation }) {
   const handleLogin = async () => {
     try {
       await login(email, senha);  // Login é 100% tratado no contexto
-      navigation.navigate('Inicio');  // Navega só se sucesso
+      navigation.navigate('MenuLateral');  // Navega só se sucesso
     } catch (error) {
       Alert.alert('Erro', error.message || 'Falha ao fazer login');
     }

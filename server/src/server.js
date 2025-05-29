@@ -1,7 +1,8 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import router from './Routes/routes.js';
 import cors from 'cors';
-
+dotenv.config({path:'C:\\Users\\Kauai\\Desktop\\Estudos\\TCC\\ReactApp\\server\\constants\\.env'});
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(cors());
 app.use('/', router);
 
 const PORT = 5000;
-const HOST = '172.20.10.5'//'192.168.15.114';
+const HOST = process.env.host;
 app.listen(PORT,HOST)
   .on('listening', () => {
     console.log(`Servidor rodando em http://${HOST}:${PORT}`);

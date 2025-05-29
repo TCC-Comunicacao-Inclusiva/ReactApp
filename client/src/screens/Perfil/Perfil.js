@@ -1,3 +1,4 @@
+import Constants from 'expo-constants';
 import React, { useContext, useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, Alert } from 'react-native';
 import { AuthContext } from '../../context/AuthContext.js';
@@ -18,10 +19,10 @@ export default function PerfilScreen() {
       }
 
       try {
-const HOST = '192.169.20.223';
-        const resposta = await fetch('http://192.168.15.114:5000/perfil', {
+        const HOST = Constants.expoConfig.extra.apiurl;
+        const resposta = await fetch(`http://${HOST}:5000/perfil`, {
           headers: {
-            'Authorization': `Bearer ${usuarioLogado.token}`,
+            Authorization: `Bearer ${usuarioLogado.token}`,
           },
         });
 
@@ -31,8 +32,9 @@ const HOST = '192.169.20.223';
           throw new Error(dados.message || 'Erro ao buscar dados do usuário');
         }
 
-        setDadosUsuario(dados);
+        setDadosUsuario(dados.perfil);
       } catch (erro) {
+        console.error('Erro no carregamento do perfil:', erro);
         Alert.alert('Erro', erro.message);
       } finally {
         setCarregando(false);
@@ -53,17 +55,35 @@ const HOST = '192.169.20.223';
   if (!dadosUsuario) {
     return (
       <View style={styles.container}>
-        <Text style={styles.nome}>Erro ao carregar usuário</Text>
+        <Text style={{ fontSize: 18, color: '#fff' }}>Erro ao carregar usuário</Text>
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
-      <FotoPerfil imagem={require('../../../assets/icon.png')} />
-      <Text style={styles.nome}>
-        Bem-vindo, {dadosUsuario.nome?.split(' ')[0] || dadosUsuario.email}
+      <View style={styles.photoContainer}>
+        <FotoPerfil style={styles.photo} imagem={require('../../../icons/profile.jpg')} />
+      </View>
+
+      <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#fff', marginBottom: 20 }}>
+        Bem-vindo, {dadosUsuario.name?.split(' ')[0]}
       </Text>
+
+      <View style={styles.infoBlock}>
+        <Text style={styles.infoLabel}>Email:</Text>
+        <Text style={styles.infoText}>{dadosUsuario.email}</Text>
+      </View>
+
+      <View style={styles.infoBlock}>
+        <Text style={styles.infoLabel}>Idade:</Text>
+        <Text style={styles.infoText}>{dadosUsuario.age}</Text>
+      </View>
+
+      <View style={styles.infoBlock}>
+        <Text style={styles.infoLabel}>Interesses:</Text>
+        <Text style={styles.infoText}>{dadosUsuario.interests}</Text>
+      </View>
     </View>
   );
 }

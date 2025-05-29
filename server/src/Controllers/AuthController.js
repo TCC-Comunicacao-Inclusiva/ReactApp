@@ -1,5 +1,6 @@
 import AuthRegister from "../Services/AuthRegister.js";
 import AuthLogin from "../Services/AuthLogin.js";
+import User from "../Models/Users.js";
 
 class AuthController {
   async register(req, res) {
@@ -19,8 +20,7 @@ class AuthController {
 
   async login(req, res) {
     const { email, password } = req.body;
-    console.log(email)
-    console.log(password)
+
 
     if (!email || !password) {
       return res.status(400).json({ message: 'Email e senha são obrigatórios' });
@@ -43,7 +43,7 @@ class AuthController {
         return res.status(400).json({ message: 'Usuário não encontrado no token' });
       }
 
-      const usuarioCompleto = User.findByEmail(usuarioToken.email);
+      const usuarioCompleto = User.findByEmail(usuario.email);
       const { passwordHash, ...perfilSeguro } = usuarioCompleto;
 
 
