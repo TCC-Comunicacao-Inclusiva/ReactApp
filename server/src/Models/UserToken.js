@@ -11,8 +11,9 @@ class UserToken {
   }
 
   getByUserId(userId) {
-    return this.tokens.find(entry => entry.userId === userId);
+    return this.tokens.filter(entry => entry.userId === userId);
   }
+
 }
 
 export default new UserToken();

@@ -27,7 +27,7 @@ class Ambiente {
         ]
       }
     ];
-    this.nextId = 3;
+    this.nextId = 2;
   }
 
   getAll() {

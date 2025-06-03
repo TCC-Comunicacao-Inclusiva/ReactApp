@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 
-// Substitua pelo seu segredo real — deve ser o mesmo usado no jwt.sign()
 const segredoJWT = 'xH92!fJw@8d3R*eGvMzY#LqP!z5W$s^VpKwBnXtCePzUv7rN9kL2QjDmT8yHsAfEq';
 
 const autenticarToken = (req, res, next) => {

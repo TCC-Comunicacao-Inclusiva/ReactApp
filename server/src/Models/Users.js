@@ -12,6 +12,7 @@ class User {
         interests: 'Rainbow Six e São Paulo Futebol Clube'
       }
     ];
+    this.nextId = 1;
   }
 
   findByEmail(email) {
@@ -19,7 +20,8 @@ class User {
   }
 
   create(userData) {
-    const user = { id: this.nextId++, ...userData };
+    this.nextId++
+    const user = { id: this.nextId, ...userData };
     this.users.push(user);
     return user;
   }

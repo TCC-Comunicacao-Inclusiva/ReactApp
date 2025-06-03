@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator } from '@react-navigation/stack';
+import { useFocusEffect } from '@react-navigation/native';
 import PaginaAmbiente from '../PaginaAmbiente.js';
 import InicioScreen from '../Inicio/Inicio.js';
 import ambienteService from '../../services/ambienteService.js';
@@ -9,17 +10,20 @@ const Stack = createStackNavigator();
 const DynamicNavigator = () => {
   const [ambientes, setAmbientes] = useState([]);
 
-  useEffect(() => {
+  useFocusEffect(
+  React.useCallback(() => {
     const fetchData = async () => {
       try {
         const data = await ambienteService.getAmbientes();
         setAmbientes(data);
       } catch (error) {
-        console.error('Erro ao carregar ambientes:', error);
+        console.error('Erro ao recarregar ambientes:', error);
       }
     };
     fetchData();
-  }, []);
+  }, [])
+);
+
 
   return (
     <Stack.Navigator initialRouteName="Inicio" screenOptions={{ headerShown: false }}>

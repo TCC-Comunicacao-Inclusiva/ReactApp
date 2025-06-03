@@ -1,25 +1,31 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AuthContext } from '../../context/AuthContext.js';
+import FotoPerfil from '../../components/FotoPerfil.js';
 import styles from '../../styles/stylesLogin.js';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const { login } = useContext(AuthContext);
+  const { Login } = useContext(AuthContext);
 
   const handleLogin = async () => {
     try {
-      await login(email, senha);  // Login é 100% tratado no contexto
+      await Login(email, senha);  // Login é 100% tratado no contexto
       navigation.navigate('MenuLateral');  // Navega só se sucesso
     } catch (error) {
-      Alert.alert('Erro', error.message || 'Falha ao fazer login');
+      Alert.alert('Erro', error.message || 'Falha ao fazer Login');
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Login</Text>
+
+      <View style={styles.photoContainer}>
+        <FotoPerfil style={styles.photo} imagem={require('../../../icons/profile.jpg')} />
+      </View>
+
+      <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -35,8 +41,12 @@ export default function LoginScreen({ navigation }) {
         value={senha}
         onChangeText={setSenha}
       />
-      <TouchableOpacity style={styles.botao} onPress={handleLogin}>
-        <Text style={styles.textoBotao}>Entrar</Text>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Entrar</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Register')}>
+        <Text style={styles.buttonTextRegister}>Cadastre-se</Text>
       </TouchableOpacity>
     </View>
   );

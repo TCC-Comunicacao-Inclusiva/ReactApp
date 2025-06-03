@@ -27,10 +27,10 @@ export const AuthProvider = ({ children }) => {
     carregarUsuario();
   }, []);
 
-  const login = async (email, password) => {
+  const Login = async (email, password) => {
     try {
       const HOST = Constants.expoConfig.extra.apiurl;
-      const resposta = await fetch(`http://${HOST}:5000/login`, {
+      const resposta = await fetch(`http://${HOST}:5000/Login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -49,6 +49,23 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+    const register = async (email, password,name,age,interests) => {
+    try {
+      const HOST = Constants.expoConfig.extra.apiurl;
+      const resposta = await fetch(`http://${HOST}:5000/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password,name,age,interests }),
+      });
+      
+      if (!resposta.ok) throw new Error('Erro ao Cadastrar');
+
+      const dados = await resposta.json();
+    } catch (error) {
+      throw error;
+    }
+  };
+
   const logout = async () => {
     await AsyncStorage.removeItem('token');
     await AsyncStorage.removeItem('email');
@@ -56,7 +73,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ usuarioLogado, login, logout, carregando }}>
+    <AuthContext.Provider value={{ usuarioLogado, Login, logout,register, carregando }}>
       {children}
     </AuthContext.Provider>
   );

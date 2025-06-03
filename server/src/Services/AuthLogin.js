@@ -15,7 +15,7 @@ class AuthLogin {
       throw new Error('Token de senha não encontrado');
     }
 
-    const passwordWithToken = password + tokenData.token;
+    const passwordWithToken = password + tokenData[0].token;
     const isPasswordValid = await bcrypt.compare(passwordWithToken, user.passwordHash);
     if (!isPasswordValid) {
       throw new Error('Senha inválida');
