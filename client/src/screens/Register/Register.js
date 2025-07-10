@@ -3,6 +3,8 @@ import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AuthContext } from '../../context/AuthContext.js';
 import FotoPerfil from '../../components/FotoPerfil.js';
 import styles from '../../styles/stylesLogin.js';
+import FloatingPuzzleBackground from '../../components/PuzzleBackground.js';
+
 
 export default function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -23,6 +25,8 @@ export default function RegisterScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+
+      <FloatingPuzzleBackground />
 
       <Text style={styles.title}>Cadastro</Text>
       <TextInput

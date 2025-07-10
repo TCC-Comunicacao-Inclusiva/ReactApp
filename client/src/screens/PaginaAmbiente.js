@@ -2,6 +2,7 @@ import React from 'react';
 import { View, FlatList, Text } from 'react-native';
 import CardItem from '../components/CardItem';
 import styles from '../styles/stylesTelaAudio.js'; 
+import FloatingPuzzleBackground from '../components/PuzzleBackground.js';
 
 
 export default function PaginaAmbiente({ route }) {
@@ -35,6 +36,9 @@ export default function PaginaAmbiente({ route }) {
 
   return (
     <View style={styles.container}>
+
+      <FloatingPuzzleBackground />
+
       <Text style={styles.title}>{ambiente.nome}</Text>
       <View style={styles.listContainer}>
         <FlatList

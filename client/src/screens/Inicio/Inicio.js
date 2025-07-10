@@ -3,6 +3,7 @@ import { View, ScrollView, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import NavegacaoBotao from '../../components/NavegacaoBotao.js';
 import styles from '../../styles/stylesInicio.js';
+import FloatingPuzzleBackground from '../../components/PuzzleBackground.js';
 
 const InicioScreen = ({ navigation, ambientes }) => {
   useLayoutEffect(() => {
@@ -21,18 +22,11 @@ const InicioScreen = ({ navigation, ambientes }) => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Botões fixos (descomentando se quiser manter) */}
-      {/* 
-      <NavegacaoBotao
-        titulo="Perfil"
-        icone="person"
-        estilo={styles.button}
-        estiloTexto={styles.buttonText}
-        onPress={() => navigation.navigate('Perfil')}
-      /> 
-      */}
 
-      {/* Botões dinâmicos */}
+      
+      <FloatingPuzzleBackground />
+
+
       {ambientes && ambientes.length > 0 ? (
         ambientes.map((ambiente) => (
           <NavegacaoBotao

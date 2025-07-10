@@ -24,7 +24,7 @@ router
 .route('/allambientes')
 .get(autenticarToken,(req,res)=>AuthController.getAllAmbientes(req,res));
 
-//AllAmbientes
+//CreateAmbientes
 router
 .route('/createambiente')
 .post(autenticarToken,(req,res)=>AuthController.createAmbientes(req,res));

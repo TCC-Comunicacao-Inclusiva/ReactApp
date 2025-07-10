@@ -4,6 +4,9 @@ import { View, Text, ActivityIndicator, Alert } from 'react-native';
 import { AuthContext } from '../../context/AuthContext.js';
 import styles from '../../styles/stylesPerfil.js';
 import FotoPerfil from '../../components/FotoPerfil.js';
+import FloatingPuzzleBackground from '../../components/PuzzleBackground.js';
+
+
 
 export default function PerfilScreen() {
   const { usuarioLogado } = useContext(AuthContext);
@@ -62,6 +65,9 @@ export default function PerfilScreen() {
 
   return (
     <View style={styles.container}>
+
+      <FloatingPuzzleBackground />
+
       <View style={styles.photoContainer}>
         <FotoPerfil style={styles.photo} imagem={require('../../../icons/profile.jpg')} />
       </View>

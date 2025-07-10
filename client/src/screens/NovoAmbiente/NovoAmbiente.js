@@ -11,6 +11,8 @@ import Constants from 'expo-constants';
 import { AuthContext } from '../../context/AuthContext.js';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import stylesNovoAmbiente from '../../styles/stylesNovoAmbiente.js';
+import FloatingPuzzleBackground from '../../components/PuzzleBackground.js';
+
 
 const icones = [
   require('../../../icons/banheiro.png'),
@@ -106,6 +108,10 @@ export default function NovoAmbienteScreen() {
 
   return (
     <View style={stylesNovoAmbiente.container}>
+
+      <FloatingPuzzleBackground />
+
+
       {!ambienteCriado ? (
         <>
           <Text style={stylesNovoAmbiente.title}>Novo Ambiente</Text>

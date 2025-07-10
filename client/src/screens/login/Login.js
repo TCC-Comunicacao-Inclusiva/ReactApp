@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AuthContext } from '../../context/AuthContext.js';
 import FotoPerfil from '../../components/FotoPerfil.js';
 import styles from '../../styles/stylesLogin.js';
+import FloatingPuzzleBackground from '../../components/PuzzleBackground.js'; // novo import!
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -11,8 +12,8 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = async () => {
     try {
-      await Login(email, senha);  // Login é 100% tratado no contexto
-      navigation.navigate('MenuLateral');  // Navega só se sucesso
+      await Login(email, senha);
+      navigation.navigate('MenuLateral');
     } catch (error) {
       Alert.alert('Erro', error.message || 'Falha ao fazer Login');
     }
@@ -20,6 +21,8 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      
+      <FloatingPuzzleBackground />
 
       <View style={styles.photoContainer}>
         <FotoPerfil style={styles.photo} imagem={require('../../../icons/profile.jpg')} />
