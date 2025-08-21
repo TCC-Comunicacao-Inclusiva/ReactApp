@@ -1,0 +1,98 @@
+[
+  {
+    "data": "2025-08-19T16:47:00.007Z",
+    "latitude": -23.6427897,
+    "longitude": -46.5769868,
+    "texto": "Ir Embora",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1755632793,
+      "exp": 1755650793
+    }
+  },
+  {
+    "data": "2025-08-19T16:47:00.902Z",
+    "latitude": -23.6427897,
+    "longitude": -46.5769868,
+    "texto": "Comer",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1755632793,
+      "exp": 1755650793
+    }
+  },
+  {
+    "data": "2025-08-19T16:47:01.872Z",
+    "latitude": -23.6427897,
+    "longitude": -46.5769868,
+    "texto": "Quero ir ao Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1755632793,
+      "exp": 1755650793
+    }
+  },
+  {
+    "data": "2025-08-19T16:47:02.405Z",
+    "latitude": -23.6427897,
+    "longitude": -46.5769868,
+    "texto": "Gostei",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1755632793,
+      "exp": 1755650793
+    }
+  },
+  {
+    "data": "2025-08-19T16:47:30.015Z",
+    "latitude": -23.6427897,
+    "longitude": -46.5769868,
+    "texto": "Não Gostei",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1755632793,
+      "exp": 1755650793
+    }
+  },
+  {
+    "data": "2025-08-19T16:47:30.023Z",
+    "latitude": -23.6427897,
+    "longitude": -46.5769868,
+    "texto": "Brincar",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1755632793,
+      "exp": 1755650793
+    }
+  },
+  {
+    "data": "2025-08-19T16:47:30.024Z",
+    "latitude": -23.6427897,
+    "longitude": -46.5769868,
+    "texto": "Gostei",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1755632793,
+      "exp": 1755650793
+    }
+  },
+  {
+    "data": "2025-08-19T16:47:30.030Z",
+    "latitude": -23.6427897,
+    "longitude": -46.5769868,
+    "texto": "Quero ir ao Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1755632793,
+      "exp": 1755650793
+    }
+  }
+]

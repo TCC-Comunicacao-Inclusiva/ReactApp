@@ -2,6 +2,9 @@ import AuthRegister from "../Services/AuthRegister.js";
 import AuthLogin from "../Services/AuthLogin.js";
 import Ambiente from "../Models/Ambiente.js";
 import User from "../Models/Users.js";
+import fs from 'fs';
+import fsp from 'fs/promises';
+import path from 'path';
 
 class AuthController {
   async register(req, res) {
@@ -91,6 +94,60 @@ class AuthController {
     res.status(500).json({ message: 'Erro ao buscar ambientes' });
   }
 }
+
+
+async saveEvent(req, res) {
+
+const DATA_DIR = path.resolve(process.cwd(), 'data');      // <raiz do projeto>/data
+const FILE_PATH = path.join(DATA_DIR, 'events.json');      // <raiz>/data/events.json
+
+
+    try {
+      const { data, dataISO, latitude, longitude, texto } = req.body;
+      const usuario = req.usuario; // vem do middleware
+
+      const when = dataISO || data || new Date().toISOString();
+
+      const newEvent = {
+        data: when,
+        latitude,
+        longitude,
+        texto,
+        usuario,
+      };
+
+      // 1) Garante a pasta
+      await fsp.mkdir(DATA_DIR, { recursive: true });
+
+      // 2) Se o arquivo não existir, cria com array vazio
+      try {
+        await fsp.access(FILE_PATH, fs.constants.F_OK);
+      } catch {
+        await fsp.writeFile(FILE_PATH, '[]', 'utf8');
+      }
+
+      // 3) Lê o arquivo (tratando corrupção)
+      const raw = await fsp.readFile(FILE_PATH, 'utf8');
+      let events;
+      try {
+        events = JSON.parse(raw);
+        if (!Array.isArray(events)) events = [];
+      } catch {
+        events = [];
+      }
+
+      // 4) Adiciona e grava
+      events.push(newEvent);
+      await fsp.writeFile(FILE_PATH, JSON.stringify(events, null, 2), 'utf8');
+
+      return res
+        .status(201)
+        .json({ message: 'Evento salvo com sucesso!', event: newEvent, file: FILE_PATH });
+    } catch (err) {
+      console.error('[saveEvent] erro:', err);
+      return res.status(500).json({ message: 'Erro ao salvar evento' });
+    }
+  }
 
 }
 

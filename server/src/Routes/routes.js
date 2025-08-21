@@ -29,5 +29,9 @@ router
 .route('/createambiente')
 .post(autenticarToken,(req,res)=>AuthController.createAmbientes(req,res));
 
+router
+.route('/event')
+.post(autenticarToken,(req,res)=>AuthController.saveEvent(req,res));
+
 
 export default router;
