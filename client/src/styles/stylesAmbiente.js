@@ -6,7 +6,7 @@ const screenHeight = Dimensions.get('window').height;
 const stylesAmbiente = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#40E0D0', 
+    backgroundColor: '#012E40', // fundo alinhado com o app
     padding: 15,
     alignItems: 'center',
     justifyContent: 'center',
@@ -14,19 +14,20 @@ const stylesAmbiente = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#fafafa', // texto claro no fundo escuro
     textAlign: 'center',
     marginBottom: 20,
   },
   addMainButton: {
-    backgroundColor: '#007bff',
+    backgroundColor: '#038C8C', // teal principal
     paddingVertical: 12,
     paddingHorizontal: 25,
-    borderRadius: 10,
+    borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
     width: '90%',
     marginBottom: 15,
+    elevation: 3,
   },
   addMainButtonText: {
     color: '#fff',
@@ -41,6 +42,8 @@ const stylesAmbiente = StyleSheet.create({
     fontSize: 16,
     width: '90%',
     marginBottom: 10,
+    borderWidth: 1,
+    borderColor: '#025159',
   },
   iconPicker: {
     flexDirection: 'row',
@@ -62,13 +65,14 @@ const stylesAmbiente = StyleSheet.create({
     borderRadius: 15,
   },
   addButton: {
-    backgroundColor: '#28a745',
+    backgroundColor: '#F28705', // botão secundário laranja
     paddingVertical: 12,
     paddingHorizontal: 25,
-    borderRadius: 10,
+    borderRadius: 12,
     alignItems: 'center',
     marginTop: 10,
     width: '90%',
+    elevation: 2,
   },
   addButtonText: {
     color: '#fff',
@@ -76,25 +80,27 @@ const stylesAmbiente = StyleSheet.create({
     fontWeight: 'bold',
   },
   button: {
-    backgroundColor: '#fff',
+    backgroundColor: '#025159', // cards de ação em azul petróleo
     borderRadius: 15,
     paddingVertical: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    marginHorizontal: 5, 
-    marginVertical: 10,  
-    width: screenWidth * 0.27, 
+    marginHorizontal: 5,
+    marginVertical: 10,
+    width: screenWidth * 0.27,
     height: screenHeight * 0.12,
+    elevation: 2,
   },
   buttonImage: {
     width: 45,
     height: 45,
     marginBottom: 5,
+    tintColor: '#fafafa', // garante contraste no fundo escuro
   },
   buttonText: {
     fontSize: 16,
     textAlign: 'center',
-    color: '#333',
+    color: '#fafafa',
     fontWeight: '600',
   },
 });

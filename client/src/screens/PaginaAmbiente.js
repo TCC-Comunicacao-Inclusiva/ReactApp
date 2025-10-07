@@ -21,14 +21,12 @@ export default function PaginaAmbiente({ route }) {
 };
 
 
-    // Adaptando item para o formato esperado por CardItem
     const conteudo = {
-      getTitulo: () => item.titulo,
-      getImagem: () =>
-      item.icon.startsWith('http') // Se for URL (web)
-      ? { uri: item.icon }
-      : iconMap[item.icon] // Local
-   // Local
+      titulo: item.titulo,
+      imagem: item.icon.startsWith('http')
+        ? { uri: item.icon }
+        : iconMap[item.icon],
+      ambiente: ambiente.nome, 
     };
 
     return <CardItem conteudo={conteudo} onPress={() => {}} />;
@@ -45,7 +43,7 @@ export default function PaginaAmbiente({ route }) {
           data={ambiente.cards}
           renderItem={renderItem}
           keyExtractor={(item, index) => index.toString()}
-          numColumns={3} // ← 3 colunas para melhor grid com seu estilo
+          numColumns={3}
           contentContainerStyle={{ alignItems: 'center' }}
         />
       </View>

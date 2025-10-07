@@ -1,98 +1,277 @@
 [
   {
-    "data": "2025-08-19T16:47:00.007Z",
-    "latitude": -23.6427897,
-    "longitude": -46.5769868,
-    "texto": "Ir Embora",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1755632793,
-      "exp": 1755650793
-    }
-  },
-  {
-    "data": "2025-08-19T16:47:00.902Z",
-    "latitude": -23.6427897,
-    "longitude": -46.5769868,
-    "texto": "Comer",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1755632793,
-      "exp": 1755650793
-    }
-  },
-  {
-    "data": "2025-08-19T16:47:01.872Z",
-    "latitude": -23.6427897,
-    "longitude": -46.5769868,
-    "texto": "Quero ir ao Banheiro",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1755632793,
-      "exp": 1755650793
-    }
-  },
-  {
-    "data": "2025-08-19T16:47:02.405Z",
-    "latitude": -23.6427897,
-    "longitude": -46.5769868,
-    "texto": "Gostei",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1755632793,
-      "exp": 1755650793
-    }
-  },
-  {
-    "data": "2025-08-19T16:47:30.015Z",
-    "latitude": -23.6427897,
-    "longitude": -46.5769868,
+    "data": "2025-08-27T13:23:49.575Z",
+    "latitude": -23.6427847,
+    "longitude": -46.5769566,
     "texto": "Não Gostei",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1755632793,
-      "exp": 1755650793
+      "iat": 1756311800,
+      "exp": 1756329800
     }
   },
   {
-    "data": "2025-08-19T16:47:30.023Z",
-    "latitude": -23.6427897,
-    "longitude": -46.5769868,
+    "data": "2025-08-27T13:23:51.396Z",
+    "latitude": -23.642786365505298,
+    "longitude": -46.57696736380526,
     "texto": "Brincar",
+    "ambiente": "Banheiro",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1755632793,
-      "exp": 1755650793
+      "iat": 1756311800,
+      "exp": 1756329800
     }
   },
   {
-    "data": "2025-08-19T16:47:30.024Z",
-    "latitude": -23.6427897,
-    "longitude": -46.5769868,
-    "texto": "Gostei",
+    "data": "2025-08-27T13:24:19.584Z",
+    "latitude": -23.64278501803486,
+    "longitude": -46.576967510751516,
+    "texto": "Exit",
+    "ambiente": "Banheiro",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1755632793,
-      "exp": 1755650793
+      "iat": 1756311800,
+      "exp": 1756329800
     }
   },
   {
-    "data": "2025-08-19T16:47:30.030Z",
-    "latitude": -23.6427897,
-    "longitude": -46.5769868,
+    "data": "2025-08-27T13:24:19.585Z",
+    "latitude": -23.642776534032265,
+    "longitude": -46.576962900966045,
+    "texto": "Fome",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T13:24:19.585Z",
+    "latitude": -23.642775777157464,
+    "longitude": -46.576961528413825,
+    "texto": "Ir Embora",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T13:28:15.088Z",
+    "latitude": -23.64278968105808,
+    "longitude": -46.57694713432135,
+    "texto": "Brincar",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T13:28:59.811Z",
+    "latitude": -23.642802040577763,
+    "longitude": -46.57693198817727,
+    "texto": "Não Gostei",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T13:29:00.468Z",
+    "latitude": -23.64275224005592,
+    "longitude": -46.576955107343785,
     "texto": "Quero ir ao Banheiro",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1755632793,
-      "exp": 1755650793
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T13:29:00.995Z",
+    "latitude": -23.64275416872327,
+    "longitude": -46.57696091828709,
+    "texto": "Ir Embora",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T13:30:12.499Z",
+    "latitude": -23.642732304162568,
+    "longitude": -46.576960488281934,
+    "texto": "Fome",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T13:30:53.297Z",
+    "latitude": -23.64268306102566,
+    "longitude": -46.57694145302477,
+    "texto": "Fome",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T13:31:23.306Z",
+    "latitude": -23.642696796416153,
+    "longitude": -46.576924658958745,
+    "texto": "Fome",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T13:31:53.314Z",
+    "latitude": -23.64269080452991,
+    "longitude": -46.577036641681225,
+    "texto": "Like",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756311800,
+      "exp": 1756329800
+    }
+  },
+  {
+    "data": "2025-08-27T17:23:56.430Z",
+    "latitude": -23.642873318398703,
+    "longitude": -46.57684884161965,
+    "texto": "Fome",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 2,
+      "email": "kauaimachado@hotmail.com",
+      "iat": 1756326213,
+      "exp": 1756344213
+    }
+  },
+  {
+    "data": "2025-08-27T17:23:56.994Z",
+    "latitude": -23.64288007390234,
+    "longitude": -46.57702098048712,
+    "texto": "Banheiro",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 2,
+      "email": "kauaimachado@hotmail.com",
+      "iat": 1756326213,
+      "exp": 1756344213
+    }
+  },
+    {
+    "data": "2025-08-27T17:23:56.994Z",
+    "latitude": -23.64298007390234,
+    "longitude": -46.57902098048712,
+    "texto": "Banheiro",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756326213,
+      "exp": 1756344213
+    }
+  },
+      {
+    "data": "2025-08-27T17:23:56.994Z",
+    "latitude": -21.64298007390234,
+    "longitude": -46.57902098048712,
+    "texto": "Banheiro",
+    "ambiente": "Casa",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756326213,
+      "exp": 1756344213
+    }
+  },
+        {
+    "data": "2025-08-27T17:23:56.994Z",
+    "latitude": -21.64298007390234,
+    "longitude": -46.57902098048712,
+    "texto": "Vida",
+    "ambiente": "Casa",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756326213,
+      "exp": 1756344213
+    }
+  },
+    {
+    "data": "2025-08-27T17:23:56.994Z",
+    "latitude": -23.64298007390234,
+    "longitude": -46.57902098048712,
+    "texto": "Banho",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756326213,
+      "exp": 1756344213
+    }
+  },
+    {
+    "data": "2025-08-27T17:23:56.994Z",
+    "latitude": -23.64298007390234,
+    "longitude": -46.57902098048712,
+    "texto": "Urinar",
+    "ambiente": "Banheiro",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756326213,
+      "exp": 1756344213
+    }
+  },
+      {
+    "data": "2025-08-27T17:23:56.994Z",
+    "latitude": -23.64298007390234,
+    "longitude": -46.57902098048712,
+    "texto": "Urinar",
+    "ambiente": "Escola",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1756326213,
+      "exp": 1756344213
     }
   }
+
+  
 ]

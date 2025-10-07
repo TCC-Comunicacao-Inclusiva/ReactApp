@@ -97,57 +97,75 @@ class AuthController {
 
 
 async saveEvent(req, res) {
+  const DATA_DIR = path.resolve(process.cwd(), 'data'); // <raiz do projeto>/data
+  const FILE_PATH = path.join(DATA_DIR, 'events.json'); // <raiz>/data/events.json
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');      // <raiz do projeto>/data
-const FILE_PATH = path.join(DATA_DIR, 'events.json');      // <raiz>/data/events.json
+  try {
+    const { data, dataISO, latitude, longitude, texto, ambiente } = req.body;
+    const usuario = req.usuario; // vem do middleware
 
+    const when = dataISO || data || new Date().toISOString();
 
+    // 1) Garante a pasta
+    await fsp.mkdir(DATA_DIR, { recursive: true });
+
+    // 2) Se o arquivo não existir, cria com array vazio
     try {
-      const { data, dataISO, latitude, longitude, texto } = req.body;
-      const usuario = req.usuario; // vem do middleware
-
-      const when = dataISO || data || new Date().toISOString();
-
-      const newEvent = {
-        data: when,
-        latitude,
-        longitude,
-        texto,
-        usuario,
-      };
-
-      // 1) Garante a pasta
-      await fsp.mkdir(DATA_DIR, { recursive: true });
-
-      // 2) Se o arquivo não existir, cria com array vazio
-      try {
-        await fsp.access(FILE_PATH, fs.constants.F_OK);
-      } catch {
-        await fsp.writeFile(FILE_PATH, '[]', 'utf8');
-      }
-
-      // 3) Lê o arquivo (tratando corrupção)
-      const raw = await fsp.readFile(FILE_PATH, 'utf8');
-      let events;
-      try {
-        events = JSON.parse(raw);
-        if (!Array.isArray(events)) events = [];
-      } catch {
-        events = [];
-      }
-
-      // 4) Adiciona e grava
-      events.push(newEvent);
-      await fsp.writeFile(FILE_PATH, JSON.stringify(events, null, 2), 'utf8');
-
-      return res
-        .status(201)
-        .json({ message: 'Evento salvo com sucesso!', event: newEvent, file: FILE_PATH });
-    } catch (err) {
-      console.error('[saveEvent] erro:', err);
-      return res.status(500).json({ message: 'Erro ao salvar evento' });
+      await fsp.access(FILE_PATH, fs.constants.F_OK);
+    } catch {
+      await fsp.writeFile(FILE_PATH, '[]', 'utf8');
     }
+
+    // 3) Lê o arquivo (tratando corrupção)
+    const raw = await fsp.readFile(FILE_PATH, 'utf8');
+    let events;
+    try {
+      events = JSON.parse(raw);
+      if (!Array.isArray(events)) events = [];
+    } catch {
+      events = [];
+    }
+
+    // 3.1) Aplica SEMPRE um jitter aleatório de 3 a 5 metros
+    let lat = Number(latitude);
+    let lon = Number(longitude);
+
+    if (Number.isFinite(lat) && Number.isFinite(lon)) {
+      const meters = 10 + Math.random() * 4; // [3,5) metros
+      const jitterDegLat = meters / 111320; // 1 m ≈ 1/111320 grau de latitude
+      const angle = Math.random() * 3 * Math.PI;
+
+      // desloca latitude
+      lat += Math.cos(angle) * jitterDegLat;
+
+      // desloca longitude corrigindo pela latitude (escala métrica)
+      const latRad = (lat * Math.PI) / 180;
+      const cosLat = Math.cos(latRad) || 1; // evita div/0
+      lon += (Math.sin(angle) * jitterDegLat) / cosLat;
+    }
+
+    // 4) Adiciona e grava
+    const newEvent = {
+      data: when,
+      latitude: lat,
+      longitude: lon,
+      texto,
+      ambiente,
+      usuario,
+    };
+
+    events.push(newEvent);
+    await fsp.writeFile(FILE_PATH, JSON.stringify(events, null, 2), 'utf8');
+
+    return res
+      .status(201)
+      .json({ message: 'Evento salvo com sucesso!', event: newEvent, file: FILE_PATH });
+  } catch (err) {
+    console.error('[saveEvent] erro:', err);
+    return res.status(500).json({ message: 'Erro ao salvar evento' });
   }
+}
+
 
 }
 

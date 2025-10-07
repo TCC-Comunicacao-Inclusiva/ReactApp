@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "email": "Admin",
+    "passwordHash": "$2b$08$.2SViSFWs73jLAzghgRWseV6ZYSVZawnut44PUnOEjcG56OnEFt/K",
+    "name": "Kauai Staingel",
+    "age": 24,
+    "interests": "Rainbow Six e São Paulo Futebol Clube"
+  },
+  {
+    "id": 2,
+    "email": "kauaimachado@hotmail.com",
+    "passwordHash": "$2b$08$X1jQjCOnPQoNioOvB2eskOQNpdQ2fyRdFy6dFAbvRRmlvdTGnVPfu",
+    "name": "Kauai Staingel",
+    "age": "24",
+    "interests": "Alergia a insetos"
+  }
+]

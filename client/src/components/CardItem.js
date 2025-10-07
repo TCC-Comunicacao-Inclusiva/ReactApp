@@ -121,7 +121,8 @@ const HOST =
 
 const API_URL = `http://${HOST}:5000/event`;
 
-async function postEvento({ dataISO, latitude, longitude, texto }) {
+// ✅ agora recebe { ambiente } também
+async function postEvento({ dataISO, latitude, longitude, texto, ambiente }) {
   const token = await AsyncStorage.getItem('token');
   if (!token) throw new Error('Token ausente');
 
@@ -131,7 +132,13 @@ async function postEvento({ dataISO, latitude, longitude, texto }) {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ data: dataISO, latitude, longitude, texto }),
+    body: JSON.stringify({
+      data: dataISO,
+      latitude,
+      longitude,
+      texto,
+      ambiente, // ✅ enviado ao backend
+    }),
   });
 
   if (!res.ok) {
@@ -144,49 +151,40 @@ async function postEvento({ dataISO, latitude, longitude, texto }) {
 const CardItem = ({ conteudo }) => {
   const handlePress = async () => {
     try {
-      // 1) Pede permissão
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') return;
 
-      // 2) Pega localização
       const { coords } = await Location.getCurrentPositionAsync({
         accuracy: Location.Accuracy.Balanced,
       });
 
-      // 3) Monta payload
-      const texto =
-        typeof conteudo?.getTitulo === 'function' ? conteudo.getTitulo() : '';
+      // ✅ ler propriedades simples do conteudo
+      const texto = conteudo?.titulo ?? '';
+      const ambiente = conteudo?.ambiente ?? '';
+
       const agora = new Date();
       const localISO = new Date(
         agora.getTime() - agora.getTimezoneOffset() * 60000
       ).toISOString();
 
-      // 4) Envia pro backend (silencioso)
       await postEvento({
         dataISO: localISO,
         latitude: coords.latitude,
         longitude: coords.longitude,
         texto,
+        ambiente, // ✅ manda junto
       });
     } catch (e) {
-      // apenas log no console, sem feedback pro usuário
       console.error('[CardItem] Falha ao enviar evento:', e?.message ?? e);
     }
   };
 
-  const imageSource =
-    typeof conteudo?.getImagem === 'function' ? conteudo.getImagem() : null;
+  const imageSource = conteudo?.imagem ?? null;
 
   return (
     <TouchableOpacity style={styles.button} onPress={handlePress} activeOpacity={0.8}>
-      {imageSource ? (
-        <Image source={imageSource} style={styles.buttonImage} />
-      ) : null}
-      <Text style={styles.buttonText}>
-        {typeof conteudo?.getTitulo === 'function'
-          ? conteudo.getTitulo()
-          : ''}
-      </Text>
+      {imageSource ? <Image source={imageSource} style={styles.buttonImage} /> : null}
+      <Text style={styles.buttonText}>{conteudo?.titulo ?? ''}</Text>
     </TouchableOpacity>
   );
 };
