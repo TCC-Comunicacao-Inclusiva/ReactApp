@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AuthProvider } from './src/context/AuthContext.js';
 
-import LoginScreen from './src/screens/Login/Login.js';
+import LoginScreen from './src/screens/login/Login.js';
 import RegisterScreen from './src/screens/Register/Register.js';
 import DrawerNavigator from './src/screens/Navigator/DrawerNavigator.js';
 
