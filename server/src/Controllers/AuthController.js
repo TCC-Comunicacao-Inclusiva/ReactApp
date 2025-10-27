@@ -57,44 +57,49 @@ class AuthController {
     }
   }
 
-  async getAllAmbientes(req, res) {
-  try {
-    const usuario = req.usuario;
+async getAllAmbientes(req, res) {
+    try {
+      const { usuario } = req;
 
-    if (!usuario) {
-      return res.status(400).json({ message: 'Usuário não encontrado no token' });
+      if (!usuario || !usuario.id) {
+        return res.status(400).json({ message: 'Usuário não encontrado no token' });
+      }
+
+      const ambientes = Ambiente.getAll(usuario.id);
+      return res.status(200).json({ ambientes });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Erro ao buscar ambientes' });
     }
-
-    const ambientes = Ambiente.getAll();
-
-
-    res.json({ ambientes });
-    
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Erro ao buscar ambientes' });
   }
-}
 
   async createAmbientes(req, res) {
-  try {
-    const usuario = req.usuario;
+    try {
+      const { usuario } = req;
 
-    if (!usuario) {
-      return res.status(400).json({ message: 'Usuário não encontrado no token' });
+      if (!usuario || !usuario.id) {
+        return res.status(400).json({ message: 'Usuário não encontrado no token' });
+      }
+
+      // validação mínima (ajuste conforme sua regra)
+      const { nome, cards } = req.body || {};
+      if (!nome) {
+        return res.status(400).json({ message: 'Campo "nome" é obrigatório' });
+      }
+
+      // NUNCA confie em userId do body: sempre derive do token
+      const novoAmbiente = Ambiente.create(usuario.id, {
+        nome,
+        cards: Array.isArray(cards) ? cards : []
+      });
+
+      // Retorna o recurso criado
+      return res.status(201).json({ ambiente: novoAmbiente });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Erro ao criar ambiente' });
     }
-
-    const ambientes = Ambiente.create(req.body);
-
-
-    res.status(200).json({ message: 'Ok' });;
-    
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Erro ao buscar ambientes' });
   }
-}
-
 
 async saveEvent(req, res) {
   const DATA_DIR = path.resolve(process.cwd(), 'data'); // <raiz do projeto>/data
@@ -163,6 +168,71 @@ async saveEvent(req, res) {
   } catch (err) {
     console.error('[saveEvent] erro:', err);
     return res.status(500).json({ message: 'Erro ao salvar evento' });
+  }
+}
+
+async saveNewOrder(req, res) {
+    try {
+      const { usuario } = req;                // vindo do authMiddleware
+      const { newAmbientesIds } = req.body;   // vindo do front
+
+      if (!usuario?.id) {
+        return res.status(401).json({ ok: false, error: 'Usuário não autenticado.' });
+      }
+
+      if (!Array.isArray(newAmbientesIds) || newAmbientesIds.length === 0) {
+        return res.status(400).json({ ok: false, error: 'newAmbientesIds é obrigatório.' });
+      }
+
+      // chama o método da classe Ambiente
+      const result = Ambiente.reassignIds(usuario.id, newAmbientesIds);
+
+      if (!result.ok) {
+        return res.status(400).json(result);
+      }
+
+      return res.status(200).json({
+        ok: true,
+        message: 'Nova ordem salva com sucesso.',
+        ambientes: result.ambientes,
+      });
+    } catch (error) {
+      console.error('Erro ao salvar nova ordem:', error);
+      return res.status(500).json({ ok: false, error: 'Erro interno ao salvar ordem.' });
+    }
+  }
+
+async saveCardsNewOrder(req, res) {
+  try {
+    const { usuario } = req;
+    const { ambienteId, newCardsIds } = req.body;
+
+    if (!usuario?.id)
+      return res.status(401).json({ ok:false, error:'Usuário não autenticado.' });
+
+    if (!ambienteId)
+      return res.status(400).json({ ok:false, error:'ambienteId é obrigatório.' });
+
+    if (!Array.isArray(newCardsIds) || !newCardsIds.length)
+      return res.status(400).json({ ok:false, error:'newCardsIds é obrigatório.' });
+
+    // normaliza itens: garante tipos e campos esperados pelo repo
+    const normalized = newCardsIds.map((x, i) => ({
+      id: Number.isFinite(Number(x?.id)) ? Number(x.id) : null,
+      titulo: String(x?.titulo ?? '').trim() || `Card ${i + 1}`,
+      newId: Number(x?.newId),
+    })).filter(x => Number.isFinite(x.newId) && x.newId > 0);
+
+    if (!normalized.length)
+      return res.status(400).json({ ok:false, error:'newCardsIds inválido.' });
+
+    const result = Ambiente.reassignCardIds(usuario.id, Number(ambienteId), normalized);
+    if (!result.ok) return res.status(400).json(result);
+
+    return res.status(200).json({ ok:true, ambiente: result.ambiente });
+  } catch (e) {
+    console.error('Erro saveCardsNewOrder:', e);
+    return res.status(500).json({ ok:false, error:'Erro interno.' });
   }
 }
 

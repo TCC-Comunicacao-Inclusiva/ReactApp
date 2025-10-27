@@ -4,7 +4,7 @@ export const imageMap = {
   "Academia.jpeg": require("./images/Academia.jpeg"),
   "Ajuda.jpeg": require("./images/Ajuda.jpeg"),
   "Aluno.jpeg": require("./images/Aluno.jpeg"),
-  "Ambulacia.jpeg": require("./images/Ambulacia.jpeg"),
+  "Ambulancia.jpeg": require("./images/Ambulancia.jpeg"),
   "Ameixa.jpeg": require("./images/Ameixa.jpeg"),
   "Amigos.jpeg": require("./images/Amigos.jpeg"),
   "Arara.jpeg": require("./images/Arara.jpeg"),

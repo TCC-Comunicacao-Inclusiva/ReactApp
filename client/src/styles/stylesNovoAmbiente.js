@@ -1,19 +1,31 @@
 import { StyleSheet } from 'react-native';
 
-const stylesNovoAmbiente = StyleSheet.create({
-  container: {
+export default StyleSheet.create({
+  safeArea: {
     flex: 1,
-    backgroundColor: '#012E40', // fundo escuro do app
+    backgroundColor: '#012E40',
+  },
+  kav: {
+    flex: 1,
+  },
+  pageContent: {
+    flexGrow: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingTop: 12,
+    paddingBottom: 24,
+    backgroundColor: '#012E40',
+  },
+  container: {
+    width: '100%',
+    alignItems: 'center',
   },
   title: {
     fontSize: 26,
     fontWeight: 'bold',
     color: '#fafafa',
     textAlign: 'center',
-    marginBottom: 24,
+    marginBottom: 16,
   },
   input: {
     width: '80%',
@@ -22,19 +34,16 @@ const stylesNovoAmbiente = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 12,
     fontSize: 16,
-    elevation: 2,
-    marginBottom: 20,
+    marginBottom: 16,
     borderWidth: 1,
     borderColor: '#025159',
   },
   button: {
-    backgroundColor: '#038C8C', // teal
+    backgroundColor: '#038C8C',
     paddingVertical: 14,
     paddingHorizontal: 20,
     borderRadius: 10,
     alignItems: 'center',
-    elevation: 3,
-    marginTop: 20,
     width: '80%',
   },
   buttonText: {
@@ -42,22 +51,21 @@ const stylesNovoAmbiente = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
   },
-  containerCriacao: {
+  scrollArea: {
     width: '90%',
     backgroundColor: '#ffffffee',
     borderRadius: 12,
     padding: 20,
-    marginTop: 20,
-    alignItems: 'center',
-    elevation: 3,
+    marginTop: 12,
     borderLeftWidth: 5,
-    borderLeftColor: '#F28705', // barra laranja de destaque
+    borderLeftColor: '#F28705',
+    minHeight: 0,
   },
   itemRow: {
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    marginBottom: 15,
+    marginBottom: 12,
   },
   itemInput: {
     flex: 1,
@@ -66,26 +74,22 @@ const stylesNovoAmbiente = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 12,
     fontSize: 16,
-    elevation: 2,
     borderWidth: 1,
     borderColor: '#025159',
   },
   addButton: {
     height: 50,
     width: 50,
-    backgroundColor: '#F28705', // botão de adicionar em laranja
+    backgroundColor: '#F28705',
     marginLeft: 10,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 3,
   },
-  iconesContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap',
+  listaIcones: {
     width: '100%',
-    marginBottom: 20,
+    height: 140,
+    flexGrow: 0,
   },
   icone: {
     width: 50,
@@ -96,7 +100,13 @@ const stylesNovoAmbiente = StyleSheet.create({
     borderColor: 'transparent',
   },
   iconeSelecionado: {
-    borderColor: '#038C8C', // selecionado em teal
+    borderColor: '#038C8C',
+  },
+  listaItens: {
+    width: '100%',
+    height: 160,
+    flexGrow: 0,
+    marginTop: 8,
   },
   listaItem: {
     flexDirection: 'row',
@@ -105,8 +115,6 @@ const stylesNovoAmbiente = StyleSheet.create({
     borderRadius: 10,
     padding: 12,
     marginBottom: 10,
-    width: '100%',
-    elevation: 1,
     borderLeftWidth: 4,
     borderLeftColor: '#038C8C',
   },
@@ -114,8 +122,14 @@ const stylesNovoAmbiente = StyleSheet.create({
     width: 24,
     height: 24,
     marginRight: 10,
-    //tintColor: '#038C8C',
+  },
+  botaoFixo: {
+    backgroundColor: '#038C8C',
+    paddingVertical: 14,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    width: '80%',
+    marginTop: 16,
   },
 });
-
-export default stylesNovoAmbiente;

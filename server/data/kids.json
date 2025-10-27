@@ -14,5 +14,21 @@
     "name": "Kauai Staingel",
     "age": "24",
     "interests": "Alergia a insetos"
+  },
+  {
+    "id": 3,
+    "email": "kauaimachad@hotmail.com",
+    "passwordHash": "$2b$08$WMo5TI6rvOPbUC0wWAUnUOrcBwYuSNG6CUXSFkSkGnBv/P7lxXeN6",
+    "name": "Kauai",
+    "age": "24",
+    "interests": "Futebol"
+  },
+  {
+    "id": 4,
+    "email": "kahe8",
+    "passwordHash": "$2b$08$APOPjNKA5FHGqtKs8YMLRuT4SmTkNy0gK9pDuxwowV6ri87Kitt6e",
+    "name": "Kauai",
+    "age": "24",
+    "interests": "Jah"
   }
 ]

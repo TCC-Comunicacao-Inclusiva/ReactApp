@@ -1,117 +1,9 @@
-// import React from 'react';
-// import { Text, Image, TouchableOpacity } from 'react-native';
-// import styles from '../styles/stylesTelaAudio.js';
-
-// const CardItem = ({ conteudo, onPress }) => (
-//   <TouchableOpacity style={styles.button} onPress={onPress}>
-//     {conteudo.getImagem() && (
-//       <Image source={conteudo.getImagem()} style={styles.buttonImage} />
-//     )}
-//     <Text style={styles.buttonText}>{conteudo.getTitulo()}</Text>
-//   </TouchableOpacity>
-// );
-
-// export default CardItem;
-// services/apiEvento.js
-// src/components/CardItem.js
-// src/components/CardItem.js
-// src/components/CardItem.js
-
-
-
-
-//######################################################################
-// import React, { useState } from 'react';
-// import { Text, Image, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
-// import * as Location from 'expo-location';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
-// import Constants from 'expo-constants';
-// import styles from '../styles/stylesTelaAudio.js';
-
-// const HOST = Constants?.expoConfig?.extra?.apiurl || Constants?.manifest?.extra?.apiurl || '10.0.2.2';
-// const API_URL = `http://${HOST}:5000/event`;
-
-// async function postEvento({ dataISO, latitude, longitude, texto }) {
-//   const token = await AsyncStorage.getItem('token');
-//   if (!token) throw new Error('Token ausente');
-
-//   const res = await fetch(API_URL, {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-//     body: JSON.stringify({ data: dataISO, latitude, longitude, texto }),
-//   });
-
-//   if (!res.ok) {
-//     const msg = await res.text().catch(() => 'Erro ao enviar evento');
-//     throw new Error(msg);
-//   }
-//   return res.json().catch(() => ({}));
-// }
-
-// const CardItem = ({ conteudo }) => {
-//   const [loading, setLoading] = useState(false);
-
-//   const handlePress = async () => {
-//     try {
-//       setLoading(true);
-
-//       // 1) Permissão
-//       const { status } = await Location.requestForegroundPermissionsAsync();
-//       if (status !== 'granted') {
-//         Alert.alert('Permissão de localização negada');
-//         setLoading(false);
-//         return;
-//       }
-
-//       // 2) Localização
-//       const { coords } = await Location.getCurrentPositionAsync({
-//         accuracy: Location.Accuracy.Balanced,
-//       });
-
-//       // 3) Payload + envio
-//       const texto = typeof conteudo?.getTitulo === 'function' ? conteudo.getTitulo() : '';
-//       const agora = new Date();
-//       const localISO = new Date(agora.getTime() - agora.getTimezoneOffset() * 60000).toISOString();
-//       await postEvento({
-        
-//         dataISO: localISO,
-//         latitude: coords.latitude,
-//         longitude: coords.longitude,
-//         texto,
-//       });
-
-//       Alert.alert('Evento enviado com sucesso!');
-//     } catch (e) {
-//       console.error(e);
-//       Alert.alert('Falha ao enviar evento', e?.message ?? '');
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   const imageSource = typeof conteudo?.getImagem === 'function' ? conteudo.getImagem() : null;
-
-//   return (
-//     <TouchableOpacity style={styles.button} onPress={handlePress} disabled={loading} activeOpacity={0.8}>
-//       {imageSource ? <Image source={imageSource} style={styles.buttonImage} /> : null}
-//       <Text style={styles.buttonText}>
-//         {typeof conteudo?.getTitulo === 'function' ? conteudo.getTitulo() : ''}
-//       </Text>
-//       {loading ? <ActivityIndicator style={{ marginTop: 6 }} /> : null}
-//     </TouchableOpacity>
-//   );
-// };
-
-// export default CardItem;
-//############################################################
-
-
-// src/components/CardItem.js
-import React from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Text, Image, TouchableOpacity } from 'react-native';
 import * as Location from 'expo-location';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Constants from 'expo-constants';
+import { Audio } from 'expo-av';
 import styles from '../styles/stylesTelaAudio.js';
 
 const HOST =
@@ -149,18 +41,81 @@ async function postEvento({ dataISO, latitude, longitude, texto, ambiente }) {
 }
 
 const CardItem = ({ conteudo }) => {
+  const imageSource = conteudo?.imagem ?? null;
+  const titulo = conteudo?.titulo ?? '';
+  const ambiente = conteudo?.ambiente ?? '';
+  const audioSource = conteudo?.audio ?? null; // ← require(...) passado pela PaginaAmbiente
+
+  const soundRef = useRef(null);
+  const [isLoadingAudio, setIsLoadingAudio] = useState(false);
+
+  // Libera o áudio quando o componente sai de tela
+  useEffect(() => {
+    return () => {
+      if (soundRef.current) {
+        soundRef.current.unloadAsync().catch(() => {});
+        soundRef.current = null;
+      }
+    };
+  }, []);
+
+  // Configura o modo de áudio (opcional, ajuda no Android/iOS)
+  useEffect(() => {
+    (async () => {
+      try {
+        await Audio.setAudioModeAsync({
+          playsInSilentModeIOS: true,
+          interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+          shouldDuckAndroid: true,
+          interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+          playThroughEarpieceAndroid: false,
+          staysActiveInBackground: false,
+        });
+      } catch (e) {
+        // silencioso
+      }
+    })();
+  }, []);
+
+  const tocarAudio = useCallback(async () => {
+    if (!audioSource) return; // sem áudio vinculado, só envia evento
+
+    if (isLoadingAudio) return;
+
+    setIsLoadingAudio(true);
+    try {
+      // carrega uma vez e reaproveita
+      if (!soundRef.current) {
+        const { sound } = await Audio.Sound.createAsync(audioSource, {
+          shouldPlay: false,
+        });
+        soundRef.current = sound;
+      }
+
+      const sound = soundRef.current;
+
+      // Sempre reinicia do começo ao tocar
+      await sound.setPositionAsync(0);
+      await sound.playAsync();
+    } catch (e) {
+      console.error('[CardItem] Falha ao tocar áudio:', e?.message ?? e);
+    } finally {
+      setIsLoadingAudio(false);
+    }
+  }, [audioSource, isLoadingAudio]);
+
   const handlePress = async () => {
     try {
+      // 1) Toca o áudio (se houver)
+      await tocarAudio();
+
+      // 2) Pede localização e envia o evento
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') return;
 
       const { coords } = await Location.getCurrentPositionAsync({
         accuracy: Location.Accuracy.Balanced,
       });
-
-      // ✅ ler propriedades simples do conteudo
-      const texto = conteudo?.titulo ?? '';
-      const ambiente = conteudo?.ambiente ?? '';
 
       const agora = new Date();
       const localISO = new Date(
@@ -171,20 +126,25 @@ const CardItem = ({ conteudo }) => {
         dataISO: localISO,
         latitude: coords.latitude,
         longitude: coords.longitude,
-        texto,
-        ambiente, // ✅ manda junto
+        texto: titulo,
+        ambiente,
       });
     } catch (e) {
-      console.error('[CardItem] Falha ao enviar evento:', e?.message ?? e);
+      console.error('[CardItem] Falha ao executar ação:', e?.message ?? e);
     }
   };
 
-  const imageSource = conteudo?.imagem ?? null;
-
   return (
-    <TouchableOpacity style={styles.button} onPress={handlePress} activeOpacity={0.8}>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={handlePress}
+      activeOpacity={0.8}
+      disabled={isLoadingAudio}
+    >
       {imageSource ? <Image source={imageSource} style={styles.buttonImage} /> : null}
-      <Text style={styles.buttonText}>{conteudo?.titulo ?? ''}</Text>
+      <Text style={styles.buttonText}>
+        {isLoadingAudio ? 'Carregando...' : titulo}
+      </Text>
     </TouchableOpacity>
   );
 };

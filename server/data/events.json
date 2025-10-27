@@ -1,277 +1,262 @@
 [
   {
-    "data": "2025-08-27T13:23:49.575Z",
-    "latitude": -23.6427847,
-    "longitude": -46.5769566,
-    "texto": "Não Gostei",
+    "data": "2025-10-27T15:03:01.139Z",
+    "latitude": -23.642619600716902,
+    "longitude": -46.57665886883846,
+    "texto": "Academia",
+    "ambiente": "Teste",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1761588138,
+      "exp": 1761606138
+    }
+  },
+  {
+    "data": "2025-10-27T15:03:31.143Z",
+    "latitude": -23.642649139235466,
+    "longitude": -46.5766506811818,
+    "texto": "Chocolate",
+    "ambiente": "Comidas",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1761588138,
+      "exp": 1761606138
+    }
+  },
+  {
+    "data": "2025-10-27T15:25:05.649Z",
+    "latitude": -23.64282049398326,
+    "longitude": -46.576795706169285,
+    "texto": "Quadro",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T13:23:51.396Z",
-    "latitude": -23.642786365505298,
-    "longitude": -46.57696736380526,
-    "texto": "Brincar",
-    "ambiente": "Banheiro",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
-    }
-  },
-  {
-    "data": "2025-08-27T13:24:19.584Z",
-    "latitude": -23.64278501803486,
-    "longitude": -46.576967510751516,
-    "texto": "Exit",
-    "ambiente": "Banheiro",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
-    }
-  },
-  {
-    "data": "2025-08-27T13:24:19.585Z",
-    "latitude": -23.642776534032265,
-    "longitude": -46.576962900966045,
-    "texto": "Fome",
-    "ambiente": "Banheiro",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
-    }
-  },
-  {
-    "data": "2025-08-27T13:24:19.585Z",
-    "latitude": -23.642775777157464,
-    "longitude": -46.576961528413825,
-    "texto": "Ir Embora",
+    "data": "2025-10-27T15:25:06.266Z",
+    "latitude": -23.642655031514078,
+    "longitude": -46.57663282550058,
+    "texto": "Lousa",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T13:28:15.088Z",
-    "latitude": -23.64278968105808,
-    "longitude": -46.57694713432135,
-    "texto": "Brincar",
+    "data": "2025-10-27T15:25:06.476Z",
+    "latitude": -23.64273797353856,
+    "longitude": -46.57679884915252,
+    "texto": "Professor",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T13:28:59.811Z",
-    "latitude": -23.642802040577763,
-    "longitude": -46.57693198817727,
-    "texto": "Não Gostei",
+    "data": "2025-10-27T15:25:07.654Z",
+    "latitude": -23.642789517291813,
+    "longitude": -46.57656518207507,
+    "texto": "Quadro",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T13:29:00.468Z",
-    "latitude": -23.64275224005592,
-    "longitude": -46.576955107343785,
-    "texto": "Quero ir ao Banheiro",
+    "data": "2025-10-27T15:25:08.155Z",
+    "latitude": -23.642647995107804,
+    "longitude": -46.57667689977607,
+    "texto": "Biblioteca",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T13:29:00.995Z",
-    "latitude": -23.64275416872327,
-    "longitude": -46.57696091828709,
-    "texto": "Ir Embora",
+    "data": "2025-10-27T15:25:08.597Z",
+    "latitude": -23.642755211834793,
+    "longitude": -46.5765609143471,
+    "texto": "Livros",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T13:30:12.499Z",
-    "latitude": -23.642732304162568,
-    "longitude": -46.576960488281934,
-    "texto": "Fome",
-    "ambiente": "Banheiro",
+    "data": "2025-10-27T15:25:35.657Z",
+    "latitude": -23.642632241793468,
+    "longitude": -46.57673784415595,
+    "texto": "Recreio",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T13:30:53.297Z",
-    "latitude": -23.64268306102566,
-    "longitude": -46.57694145302477,
-    "texto": "Fome",
-    "ambiente": "Banheiro",
+    "data": "2025-10-27T15:25:35.661Z",
+    "latitude": -23.642829897972607,
+    "longitude": -46.57662422704012,
+    "texto": "Merenda",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T13:31:23.306Z",
-    "latitude": -23.642696796416153,
-    "longitude": -46.576924658958745,
-    "texto": "Fome",
-    "ambiente": "Banheiro",
+    "data": "2025-10-27T15:25:35.660Z",
+    "latitude": -23.642809641484924,
+    "longitude": -46.576769147798025,
+    "texto": "Recreio",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T13:31:53.314Z",
-    "latitude": -23.64269080452991,
-    "longitude": -46.577036641681225,
-    "texto": "Like",
-    "ambiente": "Banheiro",
+    "data": "2025-10-27T15:25:35.659Z",
+    "latitude": -23.642715676753028,
+    "longitude": -46.576568779828754,
+    "texto": "Merenda",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756311800,
-      "exp": 1756329800
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T17:23:56.430Z",
-    "latitude": -23.642873318398703,
-    "longitude": -46.57684884161965,
-    "texto": "Fome",
-    "ambiente": "Banheiro",
+    "data": "2025-10-27T15:25:35.678Z",
+    "latitude": -23.64264049066296,
+    "longitude": -46.57664968825172,
+    "texto": "Livros",
+    "ambiente": "Aprendizado",
     "usuario": {
-      "id": 2,
-      "email": "kauaimachado@hotmail.com",
-      "iat": 1756326213,
-      "exp": 1756344213
+      "id": 1,
+      "email": "Admin",
+      "iat": 1761589478,
+      "exp": 1761607478
     }
   },
   {
-    "data": "2025-08-27T17:23:56.994Z",
-    "latitude": -23.64288007390234,
-    "longitude": -46.57702098048712,
-    "texto": "Banheiro",
-    "ambiente": "Banheiro",
-    "usuario": {
-      "id": 2,
-      "email": "kauaimachado@hotmail.com",
-      "iat": 1756326213,
-      "exp": 1756344213
-    }
-  },
-    {
-    "data": "2025-08-27T17:23:56.994Z",
-    "latitude": -23.64298007390234,
-    "longitude": -46.57902098048712,
-    "texto": "Banheiro",
-    "ambiente": "Banheiro",
+    "data": "2025-10-27T15:28:32.206Z",
+    "latitude": -23.642647874909365,
+    "longitude": -46.57669219165912,
+    "texto": "Merenda",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756326213,
-      "exp": 1756344213
+      "iat": 1761589676,
+      "exp": 1761607676
     }
   },
-      {
-    "data": "2025-08-27T17:23:56.994Z",
-    "latitude": -21.64298007390234,
-    "longitude": -46.57902098048712,
-    "texto": "Banheiro",
-    "ambiente": "Casa",
+  {
+    "data": "2025-10-27T15:28:32.690Z",
+    "latitude": -23.642766971648253,
+    "longitude": -46.576579852153706,
+    "texto": "Recreio",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756326213,
-      "exp": 1756344213
+      "iat": 1761589676,
+      "exp": 1761607676
     }
   },
-        {
-    "data": "2025-08-27T17:23:56.994Z",
-    "latitude": -21.64298007390234,
-    "longitude": -46.57902098048712,
-    "texto": "Vida",
-    "ambiente": "Casa",
+  {
+    "data": "2025-10-27T15:28:33.052Z",
+    "latitude": -23.642716715648795,
+    "longitude": -46.57657603151982,
+    "texto": "Livros",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756326213,
-      "exp": 1756344213
+      "iat": 1761589676,
+      "exp": 1761607676
     }
   },
-    {
-    "data": "2025-08-27T17:23:56.994Z",
-    "latitude": -23.64298007390234,
-    "longitude": -46.57902098048712,
-    "texto": "Banho",
-    "ambiente": "Banheiro",
+  {
+    "data": "2025-10-27T16:41:05.857Z",
+    "latitude": -23.642569275737586,
+    "longitude": -46.576780233841255,
+    "texto": "Aula de Artes",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756326213,
-      "exp": 1756344213
+      "iat": 1761593719,
+      "exp": 1761611719
     }
   },
-    {
-    "data": "2025-08-27T17:23:56.994Z",
-    "latitude": -23.64298007390234,
-    "longitude": -46.57902098048712,
-    "texto": "Urinar",
-    "ambiente": "Banheiro",
+  {
+    "data": "2025-10-27T16:41:35.867Z",
+    "latitude": -23.642664429348418,
+    "longitude": -46.57677376059767,
+    "texto": "Aula de Artes",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756326213,
-      "exp": 1756344213
+      "iat": 1761593719,
+      "exp": 1761611719
     }
   },
-      {
-    "data": "2025-08-27T17:23:56.994Z",
-    "latitude": -23.64298007390234,
-    "longitude": -46.57902098048712,
-    "texto": "Urinar",
-    "ambiente": "Escola",
+  {
+    "data": "2025-10-27T16:42:37.218Z",
+    "latitude": -23.642555249631663,
+    "longitude": -46.57699338311969,
+    "texto": "Aula de Artes",
+    "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1756326213,
-      "exp": 1756344213
+      "iat": 1761593719,
+      "exp": 1761611719
+    }
+  },
+  {
+    "data": "2025-10-27T16:43:52.303Z",
+    "latitude": -23.642532936450838,
+    "longitude": -46.57685277639111,
+    "texto": "Aula de Biologia",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1761594201,
+      "exp": 1761612201
     }
   }
-
-  
 ]
