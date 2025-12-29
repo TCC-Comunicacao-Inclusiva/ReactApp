@@ -1,262 +1,236 @@
 [
   {
-    "data": "2025-10-27T15:03:01.139Z",
-    "latitude": -23.642619600716902,
-    "longitude": -46.57665886883846,
-    "texto": "Academia",
-    "ambiente": "Teste",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761588138,
-      "exp": 1761606138
-    }
-  },
-  {
-    "data": "2025-10-27T15:03:31.143Z",
-    "latitude": -23.642649139235466,
-    "longitude": -46.5766506811818,
-    "texto": "Chocolate",
-    "ambiente": "Comidas",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761588138,
-      "exp": 1761606138
-    }
-  },
-  {
-    "data": "2025-10-27T15:25:05.649Z",
-    "latitude": -23.64282049398326,
-    "longitude": -46.576795706169285,
-    "texto": "Quadro",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
-    }
-  },
-  {
-    "data": "2025-10-27T15:25:06.266Z",
-    "latitude": -23.642655031514078,
-    "longitude": -46.57663282550058,
-    "texto": "Lousa",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
-    }
-  },
-  {
-    "data": "2025-10-27T15:25:06.476Z",
-    "latitude": -23.64273797353856,
-    "longitude": -46.57679884915252,
+    "data": "2025-11-25T12:17:31.161Z",
+    "latitude": -23.64284939467353,
+    "longitude": -46.576710777533606,
     "texto": "Professor",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
+      "iat": 1764083769,
+      "exp": 1764101769
     }
   },
   {
-    "data": "2025-10-27T15:25:07.654Z",
-    "latitude": -23.642789517291813,
-    "longitude": -46.57656518207507,
-    "texto": "Quadro",
-    "ambiente": "Aprendizado",
+    "data": "2025-11-25T12:17:31.161Z",
+    "latitude": -23.642764510449783,
+    "longitude": -46.576824620625985,
+    "texto": "Banana",
+    "ambiente": "Comidas",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
+      "iat": 1764083769,
+      "exp": 1764101769
     }
   },
   {
-    "data": "2025-10-27T15:25:08.155Z",
-    "latitude": -23.642647995107804,
-    "longitude": -46.57667689977607,
+    "data": "2025-11-25T12:18:23.471Z",
+    "latitude": -23.64275458834682,
+    "longitude": -46.576626649095566,
     "texto": "Biblioteca",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
+      "iat": 1764083769,
+      "exp": 1764101769
     }
   },
   {
-    "data": "2025-10-27T15:25:08.597Z",
-    "latitude": -23.642755211834793,
-    "longitude": -46.5765609143471,
+    "data": "2025-11-25T12:18:24.846Z",
+    "latitude": -23.642737246295752,
+    "longitude": -46.576624557741944,
+    "texto": "Quadro",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1764083769,
+      "exp": 1764101769
+    }
+  },
+  {
+    "data": "2025-11-25T12:18:26.203Z",
+    "latitude": -23.642789728531305,
+    "longitude": -46.57684738998555,
     "texto": "Livros",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
+      "iat": 1764083769,
+      "exp": 1764101769
     }
   },
   {
-    "data": "2025-10-27T15:25:35.657Z",
-    "latitude": -23.642632241793468,
-    "longitude": -46.57673784415595,
-    "texto": "Recreio",
+    "data": "2025-11-25T12:18:53.470Z",
+    "latitude": -23.642671167157797,
+    "longitude": -46.576631989459344,
+    "texto": "Professor",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
+      "iat": 1764083769,
+      "exp": 1764101769
     }
   },
   {
-    "data": "2025-10-27T15:25:35.661Z",
-    "latitude": -23.642829897972607,
-    "longitude": -46.57662422704012,
+    "data": "2025-11-25T12:18:53.475Z",
+    "latitude": -23.64284501842017,
+    "longitude": -46.57669141691329,
     "texto": "Merenda",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
+      "iat": 1764083769,
+      "exp": 1764101769
     }
   },
   {
-    "data": "2025-10-27T15:25:35.660Z",
-    "latitude": -23.642809641484924,
-    "longitude": -46.576769147798025,
+    "data": "2025-11-25T12:18:53.472Z",
+    "latitude": -23.642673377001465,
+    "longitude": -46.57663696547785,
     "texto": "Recreio",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
+      "iat": 1764083769,
+      "exp": 1764101769
     }
   },
   {
-    "data": "2025-10-27T15:25:35.659Z",
-    "latitude": -23.642715676753028,
-    "longitude": -46.576568779828754,
-    "texto": "Merenda",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
-    }
-  },
-  {
-    "data": "2025-10-27T15:25:35.678Z",
-    "latitude": -23.64264049066296,
-    "longitude": -46.57664968825172,
-    "texto": "Livros",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761589478,
-      "exp": 1761607478
-    }
-  },
-  {
-    "data": "2025-10-27T15:28:32.206Z",
-    "latitude": -23.642647874909365,
-    "longitude": -46.57669219165912,
-    "texto": "Merenda",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761589676,
-      "exp": 1761607676
-    }
-  },
-  {
-    "data": "2025-10-27T15:28:32.690Z",
-    "latitude": -23.642766971648253,
-    "longitude": -46.576579852153706,
-    "texto": "Recreio",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761589676,
-      "exp": 1761607676
-    }
-  },
-  {
-    "data": "2025-10-27T15:28:33.052Z",
-    "latitude": -23.642716715648795,
-    "longitude": -46.57657603151982,
-    "texto": "Livros",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761589676,
-      "exp": 1761607676
-    }
-  },
-  {
-    "data": "2025-10-27T16:41:05.857Z",
-    "latitude": -23.642569275737586,
-    "longitude": -46.576780233841255,
-    "texto": "Aula de Artes",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761593719,
-      "exp": 1761611719
-    }
-  },
-  {
-    "data": "2025-10-27T16:41:35.867Z",
-    "latitude": -23.642664429348418,
-    "longitude": -46.57677376059767,
-    "texto": "Aula de Artes",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761593719,
-      "exp": 1761611719
-    }
-  },
-  {
-    "data": "2025-10-27T16:42:37.218Z",
-    "latitude": -23.642555249631663,
-    "longitude": -46.57699338311969,
-    "texto": "Aula de Artes",
-    "ambiente": "Aprendizado",
-    "usuario": {
-      "id": 1,
-      "email": "Admin",
-      "iat": 1761593719,
-      "exp": 1761611719
-    }
-  },
-  {
-    "data": "2025-10-27T16:43:52.303Z",
-    "latitude": -23.642532936450838,
-    "longitude": -46.57685277639111,
+    "data": "2025-11-25T19:07:33.701Z",
+    "latitude": -23.61830043671494,
+    "longitude": -46.57881211971371,
     "texto": "Aula de Biologia",
     "ambiente": "Aprendizado",
     "usuario": {
       "id": 1,
       "email": "Admin",
-      "iat": 1761594201,
-      "exp": 1761612201
+      "iat": 1764108427,
+      "exp": 1764126427
+    }
+  },
+  {
+    "data": "2025-11-25T19:07:34.969Z",
+    "latitude": -23.61840626456055,
+    "longitude": -46.57885554954716,
+    "texto": "Lápis",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1764108427,
+      "exp": 1764126427
+    }
+  },
+  {
+    "data": "2025-11-25T19:08:02.781Z",
+    "latitude": -23.618432248674587,
+    "longitude": -46.57891027844856,
+    "texto": "Computador",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1764108427,
+      "exp": 1764126427
+    }
+  },
+  {
+    "data": "2025-11-25T19:23:16.382Z",
+    "latitude": -23.618405995992976,
+    "longitude": -46.57900591099419,
+    "texto": "Computador",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1764108427,
+      "exp": 1764126427
+    }
+  },
+  {
+    "data": "2025-11-25T19:23:17.675Z",
+    "latitude": -23.618349869003467,
+    "longitude": -46.57904266468928,
+    "texto": "Caneta",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1764108427,
+      "exp": 1764126427
+    }
+  },
+  {
+    "data": "2025-11-25T19:23:18.560Z",
+    "latitude": -23.618382104064533,
+    "longitude": -46.57901106116445,
+    "texto": "Aula de Biologia",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1764108427,
+      "exp": 1764126427
+    }
+  },
+  {
+    "data": "2025-11-25T19:23:46.384Z",
+    "latitude": -23.618244653503456,
+    "longitude": -46.5788427700538,
+    "texto": "Aula de Biologia",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1764108427,
+      "exp": 1764126427
+    }
+  },
+  {
+    "data": "2025-12-08T16:11:42.939Z",
+    "latitude": -23.691551607843035,
+    "longitude": -46.54927097073045,
+    "texto": "Aluno",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1765221061,
+      "exp": 1765239061
+    }
+  },
+  {
+    "data": "2025-12-08T16:11:51.208Z",
+    "latitude": -23.691657812226275,
+    "longitude": -46.549070386609564,
+    "texto": "Brincar com Amigos",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1765221061,
+      "exp": 1765239061
+    }
+  },
+  {
+    "data": "2025-12-08T16:12:18.497Z",
+    "latitude": -23.69173220518135,
+    "longitude": -46.549145351328185,
+    "texto": "Aula de Biologia",
+    "ambiente": "Aprendizado",
+    "usuario": {
+      "id": 1,
+      "email": "Admin",
+      "iat": 1765221061,
+      "exp": 1765239061
     }
   }
 ]

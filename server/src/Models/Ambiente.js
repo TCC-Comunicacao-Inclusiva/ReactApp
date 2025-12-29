@@ -18,13 +18,8 @@ class Ambiente {
           { titulo: 'Lápis', resumo: '', icon: 'Lapis.png', audio: 'lapis' },
           { titulo: 'Borracha', resumo: '', icon: 'Borracha.png', audio: 'borracha' },
           { titulo: 'Mochila', resumo: '', icon: 'Mochila.png', audio: 'mochila' },
-          { titulo: 'Professor', resumo: '', icon: 'Professor.png', audio: 'professor' },
-          { titulo: 'Biblioteca', resumo: '', icon: 'Biblioteca.png', audio: 'biblioteca' },
-          { titulo: 'Quadro', resumo: '', icon: 'Quadro.png', audio: 'quadro' },
-          { titulo: 'Lousa', resumo: '', icon: 'Lousa.png', audio: 'lousa' },
-          { titulo: 'Livros', resumo: '', icon: 'Livros.png', audio: 'livros' },
-          { titulo: 'Recreio', resumo: '', icon: 'Recreio.png', audio: 'recreio' },
-          { titulo: 'Merenda', resumo: '', icon: 'Merenda.png', audio: 'merenda' }
+          { titulo: 'Professor', resumo: '', icon: 'Professor.jpeg', audio: 'professor' },
+          { titulo: 'Lousa', resumo: '', icon: 'Lousa.jpeg', audio: 'lousa' }
         ]
       },
       {
